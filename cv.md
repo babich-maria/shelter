@@ -7,6 +7,7 @@
 * JavaScript Basics
 * Git, GitHub
 * VS Code
+  
 *********
 ## Courses:
 [Angular RSS School](https://app.rs.school/)
