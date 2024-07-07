@@ -63,7 +63,7 @@ html {
   padding-left: 30px;
 }
 
-li::before {
+.section-item::before {
   content: "";
   position: absolute;
   top: 8px;
