@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <header class="header">
       <div class="container">
@@ -40,43 +41,70 @@
     </header>
     <main>
       <div class="container main-container">
-        <section class="section" id="profile">
-          <h1 class="section-title">Profile</h1>
-          <img src="./assets/ava.jpg" alt="avatar" width="100" height="100"/>
+        <section class="section section-profile" id="profile">
+          <img
+            src="./assets/ava.jpg"
+            alt="avatar"
+            class="section-profile-logo"
+          />
+          <div class="section-profile-title">
+            <h1 class="section-title main-title">Maria Babich</h1>
+            <h3 class="section-subtitle">Junior Front-End Developer</h3>
+          </div>
         </section>
         <section class="section" id="contacts">
           <h2 class="section-title">Contacts</h2>
           <ul class="section-list">
             <li class="section-item">Wroclaw, Poland</li>
-            <li class="section-item">Email</li>
-            <li class="section-item">Github</li>
+            <li class="section-item">
+              Email:
+              <a href="mailto:ljurka@gmail.com" title="email"
+                >ljurka@gmail.com</a
+              >
+            </li>
+            <li class="section-item">
+              Github:
+              <a href="https://github.com/babich-maria" title="github"
+                >babich-maria</a
+              >
+            </li>
           </ul>
         </section>
         <section class="section" id="summary">
           <h2 class="section-title">Summary</h2>
-          <p>I like programming. It is fascinating and interesting. I have a main job, programming is a hobby for me. I have completed several training projects and now I would like to take part in the creation of a real JavaScript project. My goal is to learn a pure JavaScript at a good level and learn the React library. I will be glad to join the creation of open source projects. I would like to work under the guidance of an experienced developer to gain practical experience.</p>
+          <p>
+            I like programming. It is fascinating and interesting. I have a main
+            job, programming is a hobby for me. I have completed several
+            training projects and now I would like to take part in the creation
+            of a real JavaScript project. My goal is to learn a pure JavaScript
+            at a good level and learn the React library. I will be glad to join
+            the creation of open source projects. I would like to work under the
+            guidance of an experienced developer to gain practical experience.
+          </p>
         </section>
         <section class="section" id="skills">
           <h2 class="section-title">Skills</h2>
           <ul class="section-list">
-            <li class="section-item">Web-development: <b>HTML5, CSS3, JavaScript</b></li>
-            <li class="section-item">Frameworks and libraries: <b>Angular</b></li>
+            <li class="section-item">
+              Web-development: <b>HTML5, CSS3, JavaScript</b>
+            </li>
+            <li class="section-item">
+              Frameworks and libraries: <b>Angular</b>
+            </li>
             <li class="section-item">Version control: <b>GIT, Github</b></li>
+          </ul>
         </section>
         <section class="section" id="code">
           <h2 class="section-title">Code</h2>
           <pre class="pre">
             <code>
   function factorial(n) {
-    if(n < 0) return null;
-    if (n <= 1) return 1;
+    if(n &lt; 0) return null;
+    if (n &lt; =1) return 1;
     return n * factorial(n-1);
   }
           </code>
           </pre>
-        </section>
-        <section class="section" id="courses">
-          <h2 class="section-title">Courses</h2>
         </section>
         <section class="section section-languages" id="languages">
           <h2 class="section-title">Languages</h2>
@@ -94,8 +122,16 @@
     </main>
     <footer class="footer">
       <div class="container footer-container">
-        <div>© 2024 <a href="https://github.com/irinainina" class="github nav-link">irinainina</a></div>
-        <a href="https://rs.school/js/" class="rss"></a>
+        <div>
+          © 2024
+          <a href="https://github.com/babich-maria" class="github nav-link">
+            babich-maria
+          </a>
+        </div>
+        <a
+          href="https://app.rs.school/course/student/dashboard?course=js-fe-preschool-2024q2"
+          class="rss"
+        ></a>
       </div>
     </footer>
   </body>
