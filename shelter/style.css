@@ -121,10 +121,13 @@ html {
 .header-position {
   position: absolute;
   z-index: 1;
+}
 
+.header-width {
   margin: 0 auto;
   width: 100%;
 }
+
 
 .nav-list {
   display: flex;
