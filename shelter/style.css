@@ -97,7 +97,7 @@ html {
 }
 
 .background-wraper-main {
-  background: url("./assets/noise_transparent.png"),
+  background: url("./assets/noise_transparent@2x.png"),
     radial-gradient(237.5% 111.8% at 0% 0%, #5b483a 0%, #262425 100%);
 }
 
@@ -127,7 +127,6 @@ html {
   margin: 0 auto;
   width: 100%;
 }
-
 
 .nav-list {
   display: flex;
@@ -216,6 +215,8 @@ html {
   line-height: 130%; /* 22.1px */
   letter-spacing: 1.02px;
 
+  border: none;
+
   border-radius: 100px;
   background: var(--color-primary, #f1cdb3);
   transition: 0.25s;
@@ -238,6 +239,10 @@ html {
 
 .dark-l {
   color: var(--color-dark-xl, #4c4c4c);
+}
+
+.light-xl {
+  color: var(--color-light-xl, #fff);
 }
 
 .section-about {
@@ -267,4 +272,94 @@ html {
   justify-content: center;
   align-items: center;
   gap: 120px;
+}
+
+.background-wraper-pets {
+  background: var(--color-light-l, #f6f6f6);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.section-pets {
+  display: flex;
+  width: 1280px;
+  padding: 80px 40px 100px 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-pets__placeholder {
+  display: flex;
+  width: 1200px;
+  height: 697px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-shrink: 0;
+}
+
+.section-pets__carusel {
+  display: flex;
+}
+
+.footer__background-wraper {
+  background: url("./assets/noise_transparent@2x.png"),
+    radial-gradient(237.5% 111.8% at 0% 0%, #5b483a 0%, #262425 100%);
+
+  --background: url("./assets/noise_transparent@2x.png"),
+    radial-gradient(549.89% 73.65% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%);
+}
+
+.footer__content-placeholder {
+  width: 1280px;
+  height: 350px;
+  flex-shrink: 0;
+
+  padding: 40px 40px 0px 40px;
+}
+
+.footer__content-placeholder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer__places {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 234px;
+}
+
+.color-primary {
+  color: var(--color-primary, #f1cdb3);
+}
+
+.color-primary-light {
+  color: var(--color-primary-light, #fddcc4);
+}
+
+.footer__link{
+  display: flex;
+  color: var(--color-primary, #f1cdb3);
+  gap: 20px;
+}
+
+.footer__link:hover{
+  color: var(--color-primary-light, #fddcc4);
+}
+
+.h4 {
+  font-family: Georgia;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%; /* 23px */
+  letter-spacing: 1.2px;
 }
