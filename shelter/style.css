@@ -350,6 +350,7 @@ html {
 
 .footer__link{
   display: flex;
+  align-items: center;
   color: var(--color-primary, #f1cdb3);
   gap: 20px;
 }
