@@ -337,6 +337,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   height: 234px;
+  gap: 35px;
 }
 
 .color-primary {
