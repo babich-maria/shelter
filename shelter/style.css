@@ -325,12 +325,14 @@ html {
 }
 
 .footer__questions {
+  padding-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
 .footer__places {
+  padding-top: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
