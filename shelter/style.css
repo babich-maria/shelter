@@ -1,0 +1,457 @@
+body {
+  min-height: 100vh;
+  padding: 0;
+
+  font-family: "Georgia", sans-serif;
+}
+
+@font-face {
+  font-family: Georgia;
+  src: url("assets/fonts/georgia/georgia.ttf");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo__title {
+  color: var(--color-primary, #f1cdb3);
+
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 35.2px */
+  letter-spacing: 1.92px;
+}
+
+.logo__subtitle {
+  color: var(--color-light-xl, #fff);
+  /* logo_subtitle */
+  font-family: Arial;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.3px;
+}
+
+.logo__link {
+  text-decoration: none;
+}
+
+.section-main {
+  width: 1280px;
+  height: 908px;
+  display: flex;
+  align-items: center;
+
+  padding: 180px 40px 0 40px;
+}
+
+.section-main {
+  background: url("./assets/start-screen-puppy.png") right bottom no-repeat;
+}
+
+.container-main {
+  width: 1280px;
+  height: 908px;
+  flex-shrink: 0;
+}
+
+.section-main__content {
+  display: flex;
+  width: 460px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 42px;
+  margin-top: 163px;
+  margin-bottom: 243px;
+}
+
+.background-wraper-about {
+  background: var(--color-light-xl, #fff);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 50px;
+}
+
+.background-wraper-main {
+  background: url("./assets/noise_transparent@2x.png"),
+    radial-gradient(237.5% 111.8% at 0% 0%, #5b483a 0%, #262425 100%);
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-container {
+  display: flex;
+  width: 1200px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 573px;
+  flex-shrink: 0;
+
+  margin-top: 30px;
+}
+
+.header-position {
+  position: absolute;
+  z-index: 1;
+}
+
+.header-width {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  list-style: none;
+  height: 27px;
+  gap: 35px;
+}
+
+.paragraph-l {
+  font-family: Arial;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 24px */
+}
+
+.nav-link {
+  position: relative;
+  font-family: Arial;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 24px */
+
+  text-decoration: none;
+  color: var(--color-dark-s, #cdcdcd);
+
+  transition: 0.25s;
+}
+
+.nav-item:not(:first-child) .nav-link:hover {
+  color: var(--color-light-s, #fafafa);
+  transition: 0.25s;
+}
+
+.nav-link:active,
+.nav-link:focus {
+  outline: none;
+}
+
+.nav-item:not(:first-child) .nav-link:active,
+.nav-item:not(:first-child) .nav-link:focus {
+  outline: none;
+  border-bottom: 3px solid var(--color-primary, #f1cdb3);
+  color: var(--color-light-s, #fafafa);
+  transition: 0s;
+}
+
+.nav-item:first-child .nav-link {
+  outline: none;
+  border-bottom: 3px solid var(--color-primary, #f1cdb3);
+  color: var(--color-light-s, #fafafa);
+  transition: 0s;
+}
+
+.h2 {
+  font-family: Georgia;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 57.2px */
+}
+
+.white {
+  color: var(--color-light-xl, #fff);
+}
+
+.grey {
+  color: var(--color-dark-s, #cdcdcd);
+}
+
+.button_colored {
+  display: flex;
+  padding: 15px 45px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--color-dark-3xl, #292929);
+  font-family: Georgia;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 22.1px */
+  letter-spacing: 1.02px;
+
+  border: none;
+
+  border-radius: 100px;
+  background: var(--color-primary, #f1cdb3);
+  transition: 0.25s;
+}
+
+.button_colored:hover {
+  background: var(--color-primary-light, #fddcc4);
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.h3 {
+  font-family: Georgia;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 45.5px */
+  letter-spacing: 2.1px;
+}
+
+.dark-l {
+  color: var(--color-dark-xl, #4c4c4c);
+}
+
+.light-xl {
+  color: var(--color-light-xl, #fff);
+}
+
+.section-about {
+  display: flex;
+  width: 1280px;
+  padding: 80px 40px 100px 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-about__description {
+  display: flex;
+  width: 430px;
+  height: 380px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  flex-shrink: 0;
+}
+
+.section-about__placeholder {
+  display: flex;
+  width: 1200px;
+  height: 408px;
+  padding: 0px 175px;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+
+.background-wraper-pets {
+  background: var(--color-light-l, #f6f6f6);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.section-pets {
+  display: flex;
+  width: 1280px;
+  padding: 80px 40px 100px 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-pets__placeholder {
+  display: flex;
+  width: 1200px;
+  height: 697px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-shrink: 0;
+}
+
+.section-pets__carusel-cards {
+  margin-left: 53px;
+  margin-right: 53px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__background-wraper {
+  background: url("./assets/noise_transparent@2x.png"),
+    radial-gradient(237.5% 111.8% at 0% 0%, #5b483a 0%, #262425 100%);
+
+  --background: url("./assets/noise_transparent@2x.png"),
+    radial-gradient(549.89% 73.65% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%);
+}
+
+.footer__content-placeholder {
+  width: 1280px;
+  height: 350px;
+  flex-shrink: 0;
+
+  padding: 40px 40px 0px 40px;
+}
+
+.footer__content-placeholder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer__questions {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer__places {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 234px;
+  gap: 35px;
+}
+
+.color-primary {
+  color: var(--color-primary, #f1cdb3);
+}
+
+.color-primary-light {
+  color: var(--color-primary-light, #fddcc4);
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary, #f1cdb3);
+  gap: 20px;
+}
+
+.footer__link:hover {
+  color: var(--color-primary-light, #fddcc4);
+}
+
+.h4 {
+  font-family: Georgia;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%; /* 23px */
+  letter-spacing: 1.2px;
+}
+
+.section-pets__name {
+  color: var(--color-dark-l, #545454);
+  text-align: center;
+  font-family: Georgia;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+.button_bodered {
+  display: flex;
+  padding: 15px 45px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--color-dark-3xl, #292929);
+  font-family: Georgia;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 22.1px */
+  letter-spacing: 1.02px;
+
+  border-radius: 100px;
+  border: 2px solid #f1cdb3;
+  background: var(--color-light-s, #fafafa);
+  transition: 0.3s;
+}
+
+.button_bodered:hover {
+  border-radius: 100px;
+  background: var(--color-primary-light, #fddcc4);
+  border: 2px solid var(--color-primary-light, #fddcc4);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.section-pets__card {
+  background: var(--color-light-s, #fafafa);
+  display: flex;
+  width: 270px;
+  height: 435px;
+  padding-bottom: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  gap: 30px;
+  transition: 0.3s;
+}
+
+.section-pets__card:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.circle {
+  border-radius: 100px;
+  border: 2px solid #f1cdb3;
+  display: inline-flex;
+  padding: 23px 19px;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.circle:hover {
+  background: #FDDCC4;
+  border: 2px solid #FDDCC4;
+  transition: 0.3s;
+}
+
+.section-pets__carusel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
