@@ -29,7 +29,7 @@
                 <a href="#help" class="nav-link">Help the shelter</a>
               </li>
               <li class="nav-item">
-                <a href="#сontacts" class="nav-link">Contacts</a>
+                <a href="#contacts" class="nav-link">Contacts</a>
               </li>
             </ul>
           </nav>
@@ -82,10 +82,12 @@
         <div class="container">
           <section class="section-pets" id="pets">
             <div class="section-pets__placeholder">
-              <h3 class="section-pets__title  h3 dark-l">Our friends who are&nbsp;looking for a house</h3>
+              <h3 class="section-pets__title h3 dark-l">
+                Our friends who are&nbsp;looking for a house
+              </h3>
               <div class="section-pets__carusel">
                 <div class="circle">
-                  <img src="./assets/arrow-left.svg" alt="icon-email" />
+                  <img src="./assets/arrow-left.svg" alt="arrow-left" />
                 </div>
                 <div class="section-pets__carusel-cards">
                   <div class="section-pets__card">
@@ -105,10 +107,57 @@
                   </div>
                 </div>
                 <div class="circle">
-                  <img src="./assets/arrow-right.svg" alt="icon-email" />
+                  <img src="./assets/arrow-right.svg" alt="arrow-right" />
                 </div>
               </div>
               <button class="button_colored">Get to know the rest</button>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="background-wraper-help">
+        <div class="container">
+          <section class="section-help" id="help">
+            <div class="section-help__placeholder">
+              <h3 class="section-help__title h3 dark-l">How you can help our shelter</h3>
+              <div class="section-help__help-items">
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Pet food</h4>
+                </div>
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Transportation</h4>
+                </div>
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Toys</h4>
+                </div>
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Bowls and cups</h4>
+                </div>
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Shampoos</h4>
+                </div>
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Vitamins</h4>
+                </div>
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Medicines</h4>
+                </div>
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Colars/leashes</h4>
+                </div>
+                <div class="help-item">
+                  <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
+                  <h4 class="h4">Sleeping areas</h4>
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -117,33 +166,45 @@
     <footer class="footer">
       <div class="footer__background-wraper">
         <div class="container">
-          <div class="footer__content-placeholder">
+          <div class="footer__content-placeholder" id="contacts">
             <div class="footer__questions">
               <h3 class="h3 light-xl">For questions and&nbsp;suggestions</h3>
-              <div class="footer__link email h4">
-                <img src="./assets/icon-email.svg" alt="icon-email" />
-                <p>email@shelter.com</p>
-              </div>
-              <div class="footer__link phone h4">
-                <img src="./assets/icon-phone.svg" alt="icon-phone" />
-                <p>+13 674 567 75 54</p>
-              </div>
+              <a href="mailto:email@shelter.com">
+                <div class="footer__link email h4">
+                  <img src="./assets/icon-email.svg" alt="icon-email" />
+                  <p>email@shelter.com</p>
+                </div>
+              </a>
+              <a href="tel:+136745677554">
+                <div class="footer__link phone h4">
+                  <img src="./assets/icon-phone.svg" alt="icon-phone" />
+                  <p>+13 674 567 75 54</p>
+                </div>
+              </a>
             </div>
             <div class="footer__places">
               <h3 class="h3 light-xl">
                 We are waiting for&nbsp;your&nbsp;visit
               </h3>
-              <div class="footer__link place h4">
-                <img src="./assets/icon-marker.svg" alt="icon-marker" />
-                <p>
-                  1 Central Street, Boston
-                  (entrance&nbsp;from&nbsp;the&nbsp;store)
-                </p>
-              </div>
-              <div class="footer__link place h4">
-                <img src="./assets/icon-marker.svg" alt="icon-marker" />
-                <p>18 South Park, London</p>
-              </div>
+              <a
+                href="https://www.google.com/maps?q=1+Central+Street,+Boston"
+                target="_blank"
+              >
+                <div class="footer__link place h4">
+                  <img src="./assets/icon-marker.svg" alt="icon-marker" />
+                  <p>1 Central Street, Boston (entrance&nbsp;from&nbsp;the&nbsp;store)
+                  </p>
+                </div>
+              </a>
+              <a
+                href="https://www.google.com/maps?q=1+Central+Street,+Boston"
+                target="_blank"
+              >
+                <div class="footer__link place h4">
+                  <img src="./assets/icon-marker.svg" alt="icon-marker" />
+                  <p>18 South Park, London</p>
+                </div>
+              </a>
             </div>
             <img src="./assets/footer-puppy.png" alt="footer-puppy" />
           </div>
