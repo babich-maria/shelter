@@ -6,6 +6,7 @@
     <title>Shelter</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="./assets/favicon.ico" />
+    <script src="index.js"></script>
   </head>
   <body>
     <header class="header-position header-width">
@@ -23,7 +24,7 @@
                 <a href="#about" class="nav-link">About the shelter</a>
               </li>
               <li class="nav-item">
-                <a href="#pets" class="nav-link">Our pets</a>
+                <a href="our_pets.html#pets" class="nav-link">Our pets</a>
               </li>
               <li class="nav-item">
                 <a href="#help" class="nav-link">Help the shelter</a>
@@ -39,7 +40,7 @@
     <main>
       <div class="background-wraper-main">
         <div class="container container-main">
-          <section class="section-main" id="start-screen">
+          <section class="section-main" id="about">
             <div class="section-main__content">
               <h2 class="h2 white">Not only people need&nbsp;a&nbsp;house</h2>
               <p class="paragraph-l grey">
@@ -47,7 +48,7 @@
                 extremely wide and open heart. He or she will love you more than
                 anybody else in the world, you will see!
               </p>
-              <button class="button_colored">Make a friend</button>
+              <button id="make_friend" class="button_colored">Make a friend</button>
             </div>
           </section>
         </div>
@@ -110,7 +111,7 @@
                   <img src="./assets/arrow-right.svg" alt="arrow-right" />
                 </div>
               </div>
-              <button class="button_colored">Get to know the rest</button>
+              <button class="button_colored" id = "our_pets">Get to know the rest</button>
             </div>
           </section>
         </div>
@@ -119,7 +120,7 @@
         <div class="container">
           <section class="section-help" id="help">
             <div class="section-help__placeholder">
-              <h3 class="section-help__title h3 dark-l">How you can help our shelter</h3>
+              <h3 class="section-help__title h3 dark-l">How you can help&nbsp;our shelter</h3>
               <div class="section-help__help-items">
                 <div class="help-item">
                   <img src="./assets/icons/icon-pet-food.svg" alt="pet-food" />
