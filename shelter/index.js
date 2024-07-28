@@ -55,4 +55,20 @@ console.log(
 каждая карточка с питомцем в блоке Our Friends интерактивна при наведении на любую область этой карточки +2\n\
 плавная прокрутка по якорям +2\n\
 выполняются все ссылочные связи согласно Перечню ссылочных связей для страницы Pets +2\n\
-выполнена интерактивность ссылок и кнопок. +2\n");
+выполнена интерактивность ссылок и кнопок. +2\n"
+);
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("our_pets").addEventListener("click", function () {
+    window.location.href = "our_pets.html#pets";
+  });
+
+  document.getElementById("make_friend").addEventListener("click", function () {
+    window.location.href = "index.html#pets";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  
+});
+
