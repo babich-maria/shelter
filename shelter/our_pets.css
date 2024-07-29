@@ -443,3 +443,8 @@ html {
 .footer__content-placeholder a {
   text-decoration: none;
 }
+
+.pagination{
+  display: flex;
+  gap: 20px;
+}

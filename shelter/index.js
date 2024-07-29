@@ -62,7 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("our_pets").addEventListener("click", function () {
     window.location.href = "our_pets.html#pets";
   });
+});
 
+document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("make_friend").addEventListener("click", function () {
     window.location.href = "index.html#pets";
   });
