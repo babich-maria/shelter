@@ -413,12 +413,13 @@ html {
 }
 
 .circle {
-  border-radius: 100px;
+  width: 52px;
+height: 52px;
+  border-radius: 50%;
   border: 2px solid #f1cdb3;
-  display: inline-flex;
-  padding: 23px 19px;
-  flex-direction: column;
+  display: flex;
   align-items: center;
+  justify-content: center;
   transition: 0.3s;
 }
 
