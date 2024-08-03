@@ -93,6 +93,12 @@ div {
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
 .background-wraper-main {
   background: url("./assets/noise_transparent@2x.png"),
     radial-gradient(100% 250% at 0% 0%, #5b483a 0%, #262425 100%);
@@ -232,7 +238,6 @@ div {
 .section-about,
 .section-help {
   display: flex;
-  width: 1280px;
   padding: 80px 40px 100px 40px;
   justify-content: center;
   align-items: center;
@@ -273,7 +278,6 @@ div {
 
 .section-donation {
   display: flex;
-  width: 1280px;
   padding: 80px 182px 100px 183px;
   justify-content: center;
   align-items: center;
@@ -361,7 +365,6 @@ div {
 
 .section-pets {
   display: flex;
-  width: 1280px;
   padding: 80px 40px 100px 40px;
   justify-content: center;
   align-items: center;
@@ -396,7 +399,6 @@ div {
 }
 
 .footer__content-placeholder {
-  width: 1280px;
   height: 350px;
   flex-shrink: 0;
 
