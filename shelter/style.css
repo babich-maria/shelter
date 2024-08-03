@@ -56,23 +56,20 @@ html {
   text-decoration: none;
 }
 
+div {
+  border: 1px solid red;
+}
+
 .section-main {
-  width: 1280px;
-  height: 908px;
   display: flex;
   align-items: center;
 
-  padding: 180px 40px 0 40px;
+  padding: 0 40px 0 40px;
 }
 
 .section-main {
-  background: url("./assets/start-screen-puppy.png") right bottom no-repeat;
-}
-
-.container-main {
-  width: 1280px;
-  height: 908px;
-  flex-shrink: 0;
+  display: flex;
+  gap: 42px;
 }
 
 .section-main__content {
@@ -94,39 +91,25 @@ html {
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  min-height: 50px;
 }
 
 .background-wraper-main {
   background: url("./assets/noise_transparent@2x.png"),
-    radial-gradient(237.5% 111.8% at 0% 0%, #5b483a 0%, #262425 100%);
+    radial-gradient(100% 250% at 0% 0%, #5b483a 0%, #262425 100%);
 }
 
 .header {
-  max-width: 1200px;
-  margin: 0 auto;
+  background: url("./assets/noise_transparent@2x.png"),
+    linear-gradient(to right, #5b483a, #262425);
 }
 
-.header-container {
+.header-wrapper {
   display: flex;
-  width: 1200px;
-  height: 60px;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 30px 40px 80px 40px;
+
+  justify-content: space-between;
   align-items: center;
-  gap: 573px;
-  flex-shrink: 0;
-
-  margin-top: 30px;
-}
-
-.header-position {
-  position: absolute;
-  z-index: 1;
-}
-
-.header-width {
-  margin: 0 auto;
-  width: 100%;
 }
 
 .nav-list {
@@ -287,7 +270,6 @@ html {
   gap: 60px;
   flex-shrink: 0;
 }
-
 
 .section-donation {
   display: flex;
