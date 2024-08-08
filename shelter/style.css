@@ -29,6 +29,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center;
 }
 
 .logo__title {
@@ -37,7 +38,8 @@ html {
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
-  line-height: 110%; /* 35.2px */
+  line-height: 110%;
+  /* 35.2px */
   letter-spacing: 1.92px;
 }
 
@@ -68,15 +70,39 @@ html {
   gap: 42px;
 }
 
+@media only screen and (max-width: 1060px) {
+  .section-main {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+}
+
 .section-main__content {
   display: flex;
-  width: 460px;
+  flex-basis: 460px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 42px;
   margin-top: 163px;
   margin-bottom: 243px;
+}
+
+@media only screen and (max-width: 1060px) {
+  .section-main__content {
+    margin-bottom: 100px;
+    margin-top: 60px;
+    margin-left: 100px;
+    margin-right: 100px;
+    flex-basis: 0px;
+  }
+}
+
+.img-start-section {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin-bottom: 0;
 }
 
 .background-wraper-about,
@@ -89,7 +115,7 @@ html {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
   .container {
     max-width: 100%;
   }
@@ -114,6 +140,12 @@ html {
   align-items: center;
 }
 
+@media only screen and (max-width: 1060px) {
+  .header-wrapper {
+    padding: 30px 30px 0px 30px;
+  }
+}
+
 .nav-list {
   display: flex;
   justify-content: flex-end;
@@ -128,7 +160,8 @@ html {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%; /* 24px */
+  line-height: 160%;
+  /* 24px */
 }
 
 .nav-link {
@@ -137,7 +170,8 @@ html {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%; /* 24px */
+  line-height: 160%;
+  /* 24px */
 
   text-decoration: none;
   color: var(--color-dark-s, #cdcdcd);
@@ -175,7 +209,8 @@ html {
   font-size: 44px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 57.2px */
+  line-height: 130%;
+  /* 57.2px */
 }
 
 .white {
@@ -198,7 +233,8 @@ html {
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 22.1px */
+  line-height: 130%;
+  /* 22.1px */
   letter-spacing: 1.02px;
 
   border: none;
@@ -219,7 +255,8 @@ html {
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 45.5px */
+  line-height: 130%;
+  /* 45.5px */
   letter-spacing: 2.1px;
 }
 
@@ -296,7 +333,8 @@ html {
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
-  line-height: 18px; /* 150% */
+  line-height: 18px;
+  /* 150% */
 }
 
 .section-donation__placeholder {
@@ -307,6 +345,7 @@ html {
   gap: 30px;
   flex-shrink: 0;
 }
+
 .section-help__help-items {
   display: flex;
   gap: 55px 118px;
@@ -346,7 +385,8 @@ html {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 115%; /* 23px */
+  line-height: 115%;
+  /* 23px */
   letter-spacing: 1.2px;
 }
 
@@ -447,7 +487,8 @@ html {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 115%; /* 23px */
+  line-height: 115%;
+  /* 23px */
   letter-spacing: 1.2px;
 }
 
@@ -474,7 +515,8 @@ html {
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 22.1px */
+  line-height: 130%;
+  /* 22.1px */
   letter-spacing: 1.02px;
 
   border-radius: 100px;
@@ -534,6 +576,7 @@ html {
   align-items: center;
   width: 100%;
 }
+
 .section-pets__title {
   width: 400px;
   text-align: center;
