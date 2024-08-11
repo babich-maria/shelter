@@ -355,13 +355,13 @@ html {
 }
 
 @media only screen and (max-width: 1000px) {
-  .section-donation__placeholder {
-    --padding: 80px 165px 100px 166px;
+  .section-donation {
+    padding: 80px 132px 100px 131px;
   }
 
   .section-donation__placeholder {
     flex-direction: column-reverse;
-    gap: 80px;
+    gap: 60px;
   }
 }
 
@@ -464,7 +464,6 @@ html {
 }
 
 .footer__content-placeholder {
-  height: 350px;
   flex-shrink: 0;
 
   padding: 40px 40px 0px 40px;
