@@ -100,6 +100,10 @@ html {
     margin-right: 100px;
     flex-basis: 0px;
   }
+
+  .img-start-section {
+    margin-left: 130px;
+  }
 }
 
 .img-start-section {
@@ -165,6 +169,12 @@ html {
   font-weight: 400;
   line-height: 160%;
   /* 24px */
+}
+
+@media only screen and (max-width: 715px) {
+  .nav {
+    display: none;
+  }
 }
 
 .nav-link {
@@ -631,6 +641,12 @@ html {
   }
 }
 
+@media only screen and (max-width: 550px) {
+  .jennifer {
+    display: none;
+  }
+}
+
 .section-pets__card:hover {
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
   transition: 0.3s;
@@ -668,4 +684,11 @@ html {
 
 .footer__content-placeholder a {
   text-decoration: none;
+}
+
+.donation__puppy,
+.footer__puppy {
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
