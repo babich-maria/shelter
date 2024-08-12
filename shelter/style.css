@@ -446,12 +446,6 @@ html {
   background: var(--color-light-l, #f6f6f6);
 }
 
-.section-pets {
-  --display: flex;
-  --justify-content: center;
-  --align-items: center;
-}
-
 .section-pets__placeholder {
   display: flex;
   padding: 80px 40px 100px 40px;
