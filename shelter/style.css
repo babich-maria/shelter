@@ -138,10 +138,9 @@ html {
 .header-wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 30px 40px 80px 40px;
-
-  justify-content: space-between;
   align-items: center;
+
+  padding: 30px 40px 80px 40px;
 }
 
 @media only screen and (max-width: 1060px) {
@@ -471,16 +470,13 @@ html {
 }
 
 .footer__content-placeholder {
-  flex-shrink: 0;
-
-  padding: 40px 40px 0px 40px;
-}
-
-.footer__content-placeholder {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
+  flex-shrink: 0;
+
+  padding: 40px 40px 0px 40px;
 }
 
 @media only screen and (max-width: 1050px) {
