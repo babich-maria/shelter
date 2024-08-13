@@ -551,12 +551,24 @@ html {
   height: auto;
 }
 
-.burger{
+.burger {
   display: none;
+}
+
+.burger {
+  width: 30px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger_line {
+  height: 2px;
+  background-color: black;
 }
 
 @media only screen and (max-width: 715px) {
   .burger {
-    display: inherit;
+    display: flex;
   }
 }
