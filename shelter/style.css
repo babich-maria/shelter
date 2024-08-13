@@ -106,6 +106,20 @@ html {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .section-main__content {
+    margin-bottom: 100px;
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-basis: 0px;
+  }
+
+  .img-start-section {
+    margin-left: 50px;
+  }
+}
+
 .img-start-section {
   max-width: 100%;
   width: auto;
@@ -318,6 +332,17 @@ html {
   flex-shrink: 0;
 }
 
+
+@media only screen and (max-width: 500px) {
+  .section-about {
+    padding: 42px 10px;
+  }
+
+  .section-about__description {
+    height: 100%;
+  }
+}
+
 .section-help__placeholder {
   display: flex;
   width: 100%;
@@ -337,6 +362,15 @@ html {
   align-items: center;
 }
 
+.section-donation__placeholder {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-shrink: 0;
+}
+
 .section-donation__description {
   display: flex;
   width: 380px;
@@ -348,25 +382,6 @@ html {
   flex-shrink: 0;
 }
 
-.section-donation__information {
-  color: var(--color-dark-m, #b2b2b2);
-  font-family: Arial;
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 18px;
-  /* 150% */
-}
-
-.section-donation__placeholder {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-shrink: 0;
-}
-
 @media only screen and (max-width: 1000px) {
   .section-donation {
     padding: 80px 132px 100px 131px;
@@ -375,7 +390,33 @@ html {
   .section-donation__placeholder {
     flex-direction: column-reverse;
     gap: 60px;
+    width: 100%;
   }
+}
+
+@media only screen and (max-width: 660px) {
+  .section-about__description {
+    width: 100%;
+  }
+
+  .section-donation {
+    padding: 42px 10px;
+  }
+
+  .section-donation__description {
+    width: 310px;
+  }
+}
+
+
+.section-donation__information {
+  color: var(--color-dark-m, #b2b2b2);
+  font-family: Arial;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 18px;
+  /* 150% */
 }
 
 .h5 {
@@ -496,6 +537,13 @@ html {
   }
 }
 
+@media only screen and (max-width: 650px) {
+  .footer__content-placeholder {
+    padding: 30px 10px 0px 10px;
+    gap: 40px;
+  }
+}
+
 .footer__questions {
   padding-top: 16px;
   display: flex;
@@ -525,6 +573,12 @@ html {
   padding: 10px 15px 10px 60px;
   border-radius: 9px;
   max-width: 350px;
+}
+
+@media only screen and (max-width: 500px) {
+  .donation-credit-card {
+    font-size: 15px;
+  }
 }
 
 .color-primary {
@@ -628,6 +682,16 @@ html {
     width: calc(50% - 20px);
   }
 
+  @media (max-width: 700px) {
+    .section-pets__card {
+      width: 100%;
+    }
+
+    .section-pets__carusel-cards {
+      justify-content: center;
+    }
+  }
+
   .woody {
     display: none;
   }
@@ -683,6 +747,12 @@ html {
   text-align: center;
 }
 
+@media only screen and (max-width: 715px) {
+  .section-pets__title {
+    width: 100%;
+  }
+}
+
 .footer__content-placeholder a {
   text-decoration: none;
 }
@@ -694,7 +764,7 @@ html {
   height: auto;
 }
 
-.burger{
+.burger {
   display: none;
 }
 
