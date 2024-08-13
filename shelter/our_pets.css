@@ -503,3 +503,13 @@ html {
   width: auto;
   height: auto;
 }
+
+.burger{
+  display: none;
+}
+
+@media only screen and (max-width: 715px) {
+  .burger {
+    display: inherit;
+  }
+}
