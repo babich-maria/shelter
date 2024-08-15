@@ -28,6 +28,7 @@ html {
 .logo {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
@@ -159,12 +160,14 @@ html {
 
 .nav-item .nav-link:active,
 .nav-item .nav-link:focus {
+  padding-bottom: 3px;
   border-bottom: 3px solid var(--color-primary, #f1cdb3);
   color: var(--color-dark-l, #545454);
   transition: 0s;
 }
 
 .nav-link_active {
+  padding-bottom: 3px;
   border-bottom: 3px solid var(--color-primary, #f1cdb3);
   color: var(--color-dark-l, #545454);
   outline: none;
