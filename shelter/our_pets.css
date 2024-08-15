@@ -297,7 +297,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: 60px;
 }
 
 .section-pets__carusel-cards {
@@ -438,6 +438,7 @@ html {
   border: 2px solid #f1cdb3;
   background: var(--color-light-s, #fafafa);
   transition: 0.3s;
+
 }
 
 .button_bodered:hover {
