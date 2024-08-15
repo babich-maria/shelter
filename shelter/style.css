@@ -159,7 +159,7 @@ html {
   justify-content: space-between;
   align-items: center;
 
-  padding: 30px 40px 80px 40px;
+  padding: 30px 40px 90px 40px;
 }
 
 @media only screen and (max-width: 1060px) {
@@ -220,6 +220,7 @@ html {
 .nav-item:not(:first-child) .nav-link:active,
 .nav-item:not(:first-child) .nav-link:focus {
   outline: none;
+  padding-bottom: 3px;
   border-bottom: 3px solid var(--color-primary, #f1cdb3);
   color: var(--color-light-s, #fafafa);
   transition: 0s;
@@ -227,6 +228,7 @@ html {
 
 .nav-item:first-child .nav-link {
   outline: none;
+  padding-bottom: 3px;
   border-bottom: 3px solid var(--color-primary, #f1cdb3);
   color: var(--color-light-s, #fafafa);
   transition: 0s;
