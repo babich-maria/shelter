@@ -1,3 +1,4 @@
+import { PetCard } from './PetCard.js'
 console.log(
   "1. Вёрстка страницы Main соответствует макету при ширине экрана 1280px: +14\n\
   * блок <header>: +2\n\
