@@ -1,0 +1,63 @@
+.pet-modal__content {
+  display: flex;
+  max-width: 900px;
+}
+@media (max-width: 768px) {
+  .pet-modal__content {
+    max-width: 630px;
+  }
+}
+@media (max-width: 670px) {
+  .pet-modal__content {
+    min-width: 240px;
+  }
+}
+
+.pet__image {
+  flex-basis: 500px;
+  border-radius: 9px 0px 0px 9px;
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 860px) {
+  .pet__image {
+    flex-basis: 350px;
+  }
+}
+@media (max-width: 670px) {
+  .pet__image {
+    display: none;
+  }
+}
+
+.pet__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 15px;
+  min-width: 351px;
+  margin: 50px 20px 88px 0;
+}
+@media (max-width: 768px) {
+  .pet__content {
+    min-width: 260px;
+    margin: 10px 9px 37px 0;
+  }
+}
+@media (max-width: 670px) {
+  .pet__content {
+    min-width: 240px;
+    margin: 10px;
+  }
+}
+
+.pet__parameters {
+  margin-left: 10px;
+}
+
+.pet__breed {
+  text-align: left !important;
+}/*# sourceMappingURL=pet-modal.css.map */

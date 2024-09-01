@@ -1,0 +1,40 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  border-radius: 9px;
+  background-color: #FAFAFA;
+  max-width: 900px;
+  min-height: 120px;
+  margin: 0 69px;
+}
+@media (max-width: 1280px) {
+  .modal {
+    max-width: 858px;
+  }
+}
+@media (max-width: 768px) {
+  .modal {
+    max-width: 630px;
+  }
+}
+
+.modal__close-icon {
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  cursor: pointer;
+}
+.modal__close-icon svg {
+  pointer-events: none;
+}/*# sourceMappingURL=modal.css.map */
