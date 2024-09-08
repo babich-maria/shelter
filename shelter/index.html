@@ -35,10 +35,20 @@
             </li>
           </ul>
         </nav>
-        <div class="burger">
+        <div class="burger" id="burgerMenu">
           <div class="burger_line"></div>
           <div class="burger_line"></div>
           <div class="burger_line"></div>
+        </div>
+        <!-- Скрытое меню -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <div class="adaptive-menu" id="adaptiveMenu">
+          <ul>
+            <li class="nav-item"><a class="nav-link" href="#">About the shelter</a></li>
+            <li class="nav-item"><a class="nav-link" href="our_pets.html#pets">Our pets</a></li>
+            <li class="nav-item"><a class="nav-link" href="#help">Help the shelter</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -96,27 +106,15 @@
               Our friends who are&nbsp;looking for a house
             </h3>
             <div class="section-pets__carusel">
-              <div class="circle">
+              <div class="circle arrow-left">
                 <img src="./assets/arrow-left.svg" alt="arrow-left" />
               </div>
-              <div class="section-pets__carusel-cards">
-                <div class="section-pets__card" data-id="1">
-                  <img src="./assets/pets-katrine.png" alt="katrine" />
-                  <p class="section-pets__name">Katrine</p>
-                  <button class="button_bodered">Learn more</button>
-                </div>
-                <div class="section-pets__card jennifer" data-id="2">
-                  <img src="./assets/pets-jennifer.png" alt="jennifer" />
-                  <p class="section-pets__name">Jennifer</p>
-                  <button class="button_bodered">Learn more</button>
-                </div>
-                <div class="section-pets__card woody" data-id="3">
-                  <img src="./assets/pets-woody.png" alt="woody" />
-                  <p class="section-pets__name">Woody</p>
-                  <button class="button_bodered">Learn more</button>
+              <div class="section-pets__carusel-wrapper">
+                <div class="section-pets__carusel-cards">
+
                 </div>
               </div>
-              <div class="circle">
+              <div class="circle arrow-right">
                 <img src="./assets/arrow-right.svg" alt="arrow-right" />
               </div>
             </div>
@@ -245,4 +243,5 @@
   </footer>
   <script src="./dist/main.js"></script>
 </body>
+
 </html>

@@ -43,7 +43,6 @@ export class PetModal extends Modal {
 
         template += `</ul>`
 
-
         template += `</div>`
 
         pet.innerHTML = template;

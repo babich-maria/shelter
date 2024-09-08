@@ -151,30 +151,18 @@ const pets_data =
   }
   ];
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("our_pets").addEventListener("click", function () {
-    window.location.href = "our_pets.html#pets";
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("make_friend").addEventListener("click", function () {
-    window.location.href = "index.html#pets";
-  });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const burgerMenu = document.getElementById('burgerMenu');
   const adaptiveMenu = document.getElementById('adaptiveMenu');
 
   // Функция для открытия/закрытия меню
   function toggleMenu() {
-    adaptiveMenu.classList.toggle('menu-active');
-    menuOverlay.classList.toggle('overlay-active');
-    burgerMenu.classList.toggle('burger-active');
+      adaptiveMenu.classList.toggle('menu-active');
+      menuOverlay.classList.toggle('overlay-active');
+      burgerMenu.classList.toggle('burger-active');
 
-    // Блокировка скролла страницы
-    document.body.style.overflow = adaptiveMenu.classList.contains('menu-active') ? 'hidden' : 'auto';
+      // Блокировка скролла страницы
+      document.body.style.overflow = adaptiveMenu.classList.contains('menu-active') ? 'hidden' : 'auto';
   }
 
   // Обработчик клика по бургер-иконке
@@ -185,62 +173,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Обработчик кликов по ссылкам в меню
   document.querySelectorAll('.adaptive-menu a').forEach(link => {
-    link.addEventListener('click', toggleMenu);
+      link.addEventListener('click', toggleMenu);
   });
 });
 
 window.onload = function () {
   if (pets_data) {
-    initializeCarousel();
+    renderPetsToDom();
   }
-}
-
-function initializeCarousel() {
-  renderPetsToDom();
-  duplicateCards();
-  updateCarouselPosition();
-}
-
-const carouselTrack = document.querySelector('.section-pets__carusel-cards');
-const buttonLeft = document.querySelector('.arrow-left');
-const buttonRight = document.querySelector('.arrow-right');
-
-let currentIndex = 0;
-let visibleCards = 3;
-let totalCards = pets_data.length;
-
-let currentSlide = [];
-let currentSlideData = [];
-
-// Обработчик клика для кнопки влево
-buttonLeft.addEventListener('click', () => {
-  moveCarousel('left');
-});
-
-// Обработчик клика для кнопки вправо
-buttonRight.addEventListener('click', () => {
-   moveCarousel('right');
-});
-
-// Функция для анимации сдвига карусели
-function moveCarousel(direction) {
-  const shift = direction === 'right' ? -100 : 100;
-  carouselTrack.style.transition = 'transform 0.5s ease';
-  carouselTrack.style.transform = `translateX(${shift}%)`;
-
-  setTimeout(() => {
-      carouselTrack.style.transition = 'none';
-      if (direction === 'right') {
-          currentIndex = (currentIndex + visibleCards) % totalCards;
-      } else {
-          currentIndex = (currentIndex - visibleCards + totalCards) % totalCards;
-      }
-      updateCarouselPosition();
-  }, 500);
 }
 
 const renderPetsToDom = () => {
   let petsWrapper = getPetsWrapper();
+
+  let currentSlide = [];
+
+  let currentSlideData = [];
 
   // Генерация первого слайда при загрузке страницы
   currentSlideData = createSlide(pets_data, currentSlide);
@@ -251,18 +199,6 @@ const renderPetsToDom = () => {
   })
 
   addPetsClickHandler();
-}
-
-function duplicateCards() {
-  const firstSet = carouselTrack.innerHTML;
-  const lastSet = carouselTrack.innerHTML;
-
-  carouselTrack.innerHTML = `${lastSet}${carouselTrack.innerHTML}${firstSet}`;
-}
-
-function updateCarouselPosition() {
-  const offset = -(currentIndex + visibleCards) * 100 / (visibleCards * 3);
-  carouselTrack.style.transform = `translateX(${offset}%)`;
 }
 
 const getPetsWrapper = () => {
@@ -295,7 +231,31 @@ function generateRandomCards(pets, numCards, lastSlide = []) {
 function createSlide(petsData, currentSlide, numCards = 3) {
   // Генерируем следующий набор карточек
   const nextSlide = generateRandomCards(petsData, numCards, currentSlide);
+
+  // Обновляем текущее состояние
+  //currentSlide = nextSlide.map(pet => pet.id);
+
+  // Выводим карточки на экран
+  //displayCards(nextSlide);
+
   return nextSlide;
+}
+
+function displayCards(cards) {
+  // Функция для отображения карточек на экране
+  const sliderContainer = document.querySelector('.slider-container');
+  sliderContainer.innerHTML = ''; // Очистка предыдущих карточек
+
+  cards.forEach(card => {
+    const cardElement = document.createElement('div');
+    cardElement.className = 'card';
+    cardElement.innerHTML = `
+          <img src="${card.image}" alt="${card.name}">
+          <h3>${card.name}</h3>
+          <p>${card.type} - ${card.breed}</p>
+      `;
+    sliderContainer.appendChild(cardElement);
+  });
 }
 
 function shuffleArray(array) {
