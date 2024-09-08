@@ -280,7 +280,7 @@ html {
   /* 24px */
 }
 
-@media only screen and (max-width: 715px) {
+@media only screen and (max-width: 768px) {
   .nav {
     display: none;
   }
@@ -615,6 +615,13 @@ html {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.section-pets__carusel-wrapper {
+  overflow: hidden;
 }
 
 .footer__background-wraper {
@@ -751,8 +758,8 @@ html {
 .section-pets__card {
   background: var(--color-light-s, #fafafa);
   display: flex;
-  width: calc(33.33% - 45px);
-  max-width: 270px;
+  width: 270px;
+  height: 435px;
   padding-bottom: 30px;
   flex-direction: column;
   justify-content: space-between;
@@ -760,6 +767,7 @@ html {
   border-radius: 9px;
   gap: 30px;
   transition: 0.3s;
+  flex-shrink: 0;
 }
 
 .section-pets__card img {
@@ -826,6 +834,7 @@ html {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  overflow: hidden;
 }
 
 .section-pets__title {
@@ -858,6 +867,8 @@ html {
   height: 22px;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 10;
+  transition: 0.3s;
 }
 
 .burger_line {
@@ -868,5 +879,96 @@ html {
 @media only screen and (max-width: 768px) {
   .burger {
     display: flex;
+    transition: 0.3s;
   }
+  .navbar ul {
+    display: none;
+  }
+}
+@keyframes move-right {
+  from {
+    left: -640px;
+  }
+  to {
+    left: -1280px;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 3s;
+}
+
+@keyframes move-left {
+  from {
+    left: -640px;
+  }
+  to {
+    left: 0px;
+  }
+}
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 3s;
+}
+
+.adaptive-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100%;
+  background-color: rgb(41, 41, 41);
+  transition: right 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.adaptive-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.adaptive-menu li {
+  margin: 20px 0;
+}
+
+.adaptive-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.adaptive-menu a:hover {
+  color: #f1c40f;
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(41, 41, 41);
+  z-index: 8;
+  transition: opacity 0.5s ease;
+}
+
+.menu-active {
+  right: 0;
+}
+
+.overlay-active {
+  display: block;
+  opacity: 1;
+  background-color: rgba(41, 41, 41, 0.6);
+}
+
+.burger-active {
+  transform: rotate(90deg);
+  transition: 0.3s;
 }/*# sourceMappingURL=style.css.map */

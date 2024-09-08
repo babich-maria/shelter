@@ -35,11 +35,21 @@
             </li>
           </ul>
         </nav>
-        <div class="burger">
+        <div class="burger" id="burgerMenu">
           <div class="burger_line"></div>
           <div class="burger_line"></div>
           <div class="burger_line"></div>
         </div>
+              <!-- Скрытое меню -->
+              <div class="menu-overlay" id="menuOverlay"></div>
+              <div class="adaptive-menu" id="adaptiveMenu">
+                <ul>
+                  <li class="nav-item"><a class="nav-link" href="index.html#section-main">About the shelter</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Our pets</a></li>
+                  <li class="nav-item"><a class="nav-link" href="index.html#help">Help the shelter</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
+                </ul>
+              </div>
       </div>
     </div>
   </header>
@@ -84,12 +94,12 @@
                   <button class="button_bodered">Learn more</button>
                 </div>
                 <div class="section-pets__card pet320 pet768">
-                  <img src="./assets/pets-scarlet.png" alt="scarlett" />
+                  <img src="./assets/pets-scarlett.png" alt="scarlett" />
                   <p class="section-pets__name">Scarlett</p>
                   <button class="button_bodered">Learn more</button>
                 </div>
                 <div class="section-pets__card pet320 pet768">
-                  <img src="./assets/pets-fredie.png" alt="freddie" />
+                  <img src="./assets/pets-freddie.png" alt="freddie" />
                   <p class="section-pets__name">Freddie</p>
                   <button class="button_bodered">Learn more</button>
                 </div>
@@ -161,6 +171,7 @@
       </div>
     </div>
   </footer>
+  <script src="./dist/pets.js"></script>
 </body>
 
 </html>
