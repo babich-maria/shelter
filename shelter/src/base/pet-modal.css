@@ -1,6 +1,7 @@
 .pet-modal__content {
   display: flex;
   max-width: 900px;
+  gap: 20px;
 }
 @media (max-width: 768px) {
   .pet-modal__content {

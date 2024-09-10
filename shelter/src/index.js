@@ -189,18 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-window.onload = function () {
-  if (pets_data) {
-    initializeCarousel();
-  }
-}
-
-function initializeCarousel() {
-  renderPetsToDom();
-  duplicateCards();
-  updateCarouselPosition();
-}
-
 const carouselTrack = document.querySelector('.section-pets__carusel-cards');
 const buttonLeft = document.querySelector('.arrow-left');
 const buttonRight = document.querySelector('.arrow-right');
@@ -209,17 +197,42 @@ let currentIndex = 0;
 let visibleCards = 3;
 let totalCards = pets_data.length;
 
-let currentSlide = [];
-let currentSlideData = [];
+let currentCards = [];
+let previousCards = [];
+let cardsToShow = calculateCardsToShow();
+
+window.onload = function () {
+  if (pets_data) {
+    initializeCarousel();
+  }
+}
+
+function initializeCarousel() {
+  generateRandomCards();
+  renderCards();
+}
+
+function calculateCardsToShow() {
+  const width = window.innerWidth;
+  if (width >= 1280) return 3;
+  if (width >= 768) return 2;
+  return 1;
+}
+
+function generateRandomCards() {
+  const shuffledAnimals = shuffleArray([...pets_data]);
+  currentCards = shuffledAnimals.slice(0, cardsToShow);
+}
 
 // Обработчик клика для кнопки влево
 buttonLeft.addEventListener('click', () => {
-  moveCarousel('left');
+  slide('left');
 });
 
 // Обработчик клика для кнопки вправо
 buttonRight.addEventListener('click', () => {
-   moveCarousel('right');
+  slide('right')
+   //moveCarousel('right');
 });
 
 // Функция для анимации сдвига карусели
@@ -237,6 +250,100 @@ function moveCarousel(direction) {
       }
       updateCarouselPosition();
   }, 500);
+}
+
+function renderCards_orig() {
+  const carousel = document.getElementById("carousel");
+  carousel.innerHTML = '';
+  currentCards.forEach(animal => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `<img src="${animal.image}" alt="${animal.name}"><h3>${animal.name}</h3>`;
+      carousel.appendChild(card);
+  });
+}
+
+function renderCards() {
+  let petsWrapper = getPetsWrapper();
+  
+  generatePets(currentCards).forEach(pet => {
+    petsWrapper.append(pet.generatePetCard())
+  })
+
+  addPetsClickHandler();
+}
+
+function slide_old(direction) {
+  const carousel = document.getElementById("carousel");
+  const remainingAnimals = pets_data.filter(animal => !currentCards.includes(animal));
+  const shuffledAnimals = remainingAnimals.sort(() => 0.5 - Math.random());
+  
+  previousCards = currentCards.slice();
+
+  if (direction === "right") {
+      currentCards = shuffledAnimals.slice(0, cardsToShow);
+      carousel.style.transform = 'translateX(-100%)';
+  } else if (direction === "left") {
+      currentCards = shuffledAnimals.slice(0, cardsToShow);
+      carousel.style.transform = 'translateX(100%)';
+  }
+  
+  setTimeout(() => {
+      renderCards();
+      carousel.style.transition = 'none';
+      carousel.style.transform = 'translateX(0)';
+      setTimeout(() => carousel.style.transition = 'transform 0.5s ease', 0);
+  }, 500);
+}
+
+function slide(direction) {
+  const carousel = document.getElementById("carousel");
+  const remainingAnimals = pets_data.filter(animal => !currentCards.includes(animal));
+  const shuffledAnimals = remainingAnimals.sort(() => 0.5 - Math.random());
+  
+  // Создаем новые карточки
+  const newCards = shuffledAnimals.slice(0, cardsToShow);
+  
+  // Добавляем новые карточки на DOM, но вне видимой области
+  const newCarousel = document.createElement('div');
+  newCarousel.className = 'section-pets__carusel-cards';
+  newCarousel.style.position = 'absolute';
+  newCarousel.style.top = '0';
+  newCarousel.style.width = carousel.offsetWidth  + 'px';
+
+  generatePets(newCards).forEach(pet => {
+    newCarousel.appendChild(pet.generatePetCard())
+  })
+
+  // Определяем направление
+  if (direction === 'right') {
+      newCarousel.style.transform = 'translateX(100%)';
+      carousel.parentNode.appendChild(newCarousel);
+      
+      setTimeout(() => {
+          carousel.style.transform = 'translateX(-100%)';
+          newCarousel.style.transform = 'translateX(0)';
+      }, 20);
+  } else if (direction === 'left') {
+      newCarousel.style.transform = 'translateX(-100%)';
+      carousel.parentNode.appendChild(newCarousel);
+      
+      setTimeout(() => {
+          carousel.style.transform = 'translateX(100%)';
+          newCarousel.style.transform = 'translateX(0)';
+      }, 20);
+  }
+
+  // Завершаем анимацию и обновляем слайды
+  setTimeout(() => {
+      carousel.remove();
+      newCarousel.style.position = 'relative';
+      newCarousel.style.transform = 'translateX(0)';
+      newCarousel.className = 'section-pets__carusel-cards'; 
+      newCarousel.id = 'carousel';
+      
+      currentCards = newCards;
+  }, 520); // время дольше анимации, чтобы избежать сбоев
 }
 
 const renderPetsToDom = () => {
@@ -279,7 +386,7 @@ const generatePets = (data) => {
   return pets;
 }
 
-function generateRandomCards(pets, numCards, lastSlide = []) {
+function generateRandomCards_old(pets, numCards, lastSlide = []) {
   // Перемешиваем массив питомцев
   const shuffledPets = shuffleArray([...pets]);
 

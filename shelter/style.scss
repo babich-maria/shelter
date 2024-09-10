@@ -556,21 +556,17 @@ html {
 }
 
 .section-pets__carusel-cards {
-  margin-left: 53px;
-  margin-right: 53px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  position: relative;
-  //left: -640px;
-
   transition: transform 0.5s ease;
-  will-change: transform;
+  position: relative;
 }
 
 .section-pets__carusel-wrapper {
   overflow: hidden;
+  width: 100%;
 }
 
 .footer__background-wraper {
@@ -701,7 +697,6 @@ html {
 }
 
 .section-pets__card:hover {
-
   background: #ffffff;
 }
 
@@ -716,7 +711,7 @@ html {
 .section-pets__card {
   background: var(--color-light-s, #fafafa);
   display: flex;
-  width: 270px;
+  width: 30%;
   height: 435px;
   padding-bottom: 30px;
   flex-direction: column;
@@ -749,10 +744,6 @@ html {
     }
   }
 
-  .woody {
-    display: none;
-  }
-
   .section-pets__placeholder {
     padding: 80px 30px 100px 30px;
   }
@@ -760,12 +751,6 @@ html {
   .section-pets__carusel-cards {
     margin-left: 12px;
     margin-right: 12px;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .jennifer {
-    display: none;
   }
 }
 
@@ -794,10 +779,10 @@ html {
 .section-pets__carusel {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .section-pets__title {

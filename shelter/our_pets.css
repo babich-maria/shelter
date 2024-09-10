@@ -285,7 +285,6 @@ html {
   flex-shrink: 0;
 }
 
-
 @media only screen and (max-width: 1060px) {
   .section-pets {
     padding: 60px 30px 70px 30px;
