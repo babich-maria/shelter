@@ -512,7 +512,6 @@ html {
   .section-help {
     padding: 42px 15px;
   }
-
 }
 
 .footer__link p {
@@ -562,11 +561,13 @@ html {
   width: 100%;
   transition: transform 0.5s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .section-pets__carusel-wrapper {
   overflow: hidden;
   width: 100%;
+  display: flex;
 }
 
 .footer__background-wraper {

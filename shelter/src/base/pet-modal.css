@@ -14,7 +14,7 @@
   }
 }
 
-.pet__image {
+.pet-modal__content .pet__image {
   flex-basis: 500px;
   border-radius: 9px 0px 0px 9px;
   max-width: 100%;
@@ -23,12 +23,12 @@
      object-fit: contain;
 }
 @media (max-width: 860px) {
-  .pet__image {
+  .pet-modal__content .pet__image {
     flex-basis: 350px;
   }
 }
 @media (max-width: 670px) {
-  .pet__image {
+  .pet-modal__content .pet__image {
     display: none;
   }
 }
