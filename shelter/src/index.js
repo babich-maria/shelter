@@ -189,6 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+window.addEventListener('resize', handleResize);
+
 const carouselTrack = document.querySelector('.section-pets__carusel-cards');
 const buttonLeft = document.querySelector('.arrow-left');
 const buttonRight = document.querySelector('.arrow-right');
@@ -214,8 +216,8 @@ function initializeCarousel() {
 
 function calculateCardsToShow() {
   const width = window.innerWidth;
-  if (width >= 1280) return 3;
-  if (width >= 768) return 2;
+  if (width >= 1060) return 3;
+  if (width >= 700) return 2;
   return 1;
 }
 
@@ -341,6 +343,7 @@ function slide(direction) {
       newCarousel.style.transform = 'translateX(0)';
       newCarousel.className = 'section-pets__carusel-cards'; 
       newCarousel.id = 'carousel';
+      newCarousel.style.width = '100%'
       
       currentCards = newCards;
   }, 520); // время дольше анимации, чтобы избежать сбоев
@@ -428,4 +431,13 @@ const getClickedData = (id) => {
 const renderPetModalWindow = (content) => {
   let modal = new PetModal('pet-modal', content);
   modal.renderModal();
+}
+
+function handleResize() {
+  const newCardsToShow = calculateCardsToShow();
+  if (newCardsToShow !== cardsToShow) {
+      cardsToShow = newCardsToShow;
+      generateRandomCards();
+      renderCards();
+  }
 }
