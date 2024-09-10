@@ -179,26 +179,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = function () {
   if (pets_data) {
-    renderPetsToDom();
+    initializeCarousel();
   }
+  addPetsClickHandler2();
 }
 
-const renderPetsToDom = () => {
+function initializeCarousel() {
+  generateRandomCards();
+  renderCards();
+}
+
+function calculateCardsToShow() {
+  const width = window.innerWidth;
+  if (width >= 800) return 8;
+  if (width >= 650) return 6;
+  return 3;
+}
+
+window.addEventListener('resize', handleResize);
+
+let currentCards = [];
+let previousCards = [];
+let cardsToShow = calculateCardsToShow();
+
+function generateRandomCards() {
+  const shuffledAnimals = shuffleArray([...pets_data]);
+  currentCards = shuffledAnimals.slice(0, cardsToShow);
+}
+
+function renderCards() {
   let petsWrapper = getPetsWrapper();
-
-  let currentSlide = [];
-
-  let currentSlideData = [];
-
-  // Генерация первого слайда при загрузке страницы
-  currentSlideData = createSlide(pets_data, currentSlide);
-  currentSlide = currentSlideData.map(pet => pet.id);
-
-  generatePets(currentSlideData).forEach(pet => {
+  
+  generatePets(currentCards).forEach(pet => {
     petsWrapper.append(pet.generatePetCard())
   })
-
-  addPetsClickHandler();
 }
 
 const getPetsWrapper = () => {
@@ -215,55 +229,12 @@ const generatePets = (data) => {
   return pets;
 }
 
-function generateRandomCards(pets, numCards, lastSlide = []) {
-  // Перемешиваем массив питомцев
-  const shuffledPets = shuffleArray([...pets]);
-
-  // Фильтруем карточки, которые уже есть в предыдущем слайде
-  const filteredPets = shuffledPets.filter(pet => !lastSlide.includes(pet.id));
-
-  // Выбираем первые 'numCards' элементов после фильтрации
-  const selectedCards = filteredPets.slice(0, numCards);
-
-  return selectedCards;
-}
-
-function createSlide(petsData, currentSlide, numCards = 3) {
-  // Генерируем следующий набор карточек
-  const nextSlide = generateRandomCards(petsData, numCards, currentSlide);
-
-  // Обновляем текущее состояние
-  //currentSlide = nextSlide.map(pet => pet.id);
-
-  // Выводим карточки на экран
-  //displayCards(nextSlide);
-
-  return nextSlide;
-}
-
-function displayCards(cards) {
-  // Функция для отображения карточек на экране
-  const sliderContainer = document.querySelector('.slider-container');
-  sliderContainer.innerHTML = ''; // Очистка предыдущих карточек
-
-  cards.forEach(card => {
-    const cardElement = document.createElement('div');
-    cardElement.className = 'card';
-    cardElement.innerHTML = `
-          <img src="${card.image}" alt="${card.name}">
-          <h3>${card.name}</h3>
-          <p>${card.type} - ${card.breed}</p>
-      `;
-    sliderContainer.appendChild(cardElement);
-  });
-}
-
 function shuffleArray(array) {
   // Функция для случайного перемешивания массива
   return array.sort(() => Math.random() - 0.5);
 }
 
-const addPetsClickHandler = () => {
+const addPetsClickHandler2 = () => {
   document.querySelector('.section-pets__carusel-cards').addEventListener('click', (e) => {
     if (e.target.closest('.section-pets__card')) {
       let clickedPetId = e.target.closest('.section-pets__card').getAttribute('data-id');
@@ -281,4 +252,13 @@ const getClickedData = (id) => {
 const renderPetModalWindow = (content) => {
   let modal = new PetModal('pet-modal', content);
   modal.renderModal();
+}
+
+function handleResize() {
+  const newCardsToShow = calculateCardsToShow();
+  if (newCardsToShow !== cardsToShow) {
+      cardsToShow = newCardsToShow;
+      generateRandomCards();
+      renderCards();
+  }
 }

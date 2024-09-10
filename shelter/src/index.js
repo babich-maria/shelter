@@ -207,6 +207,7 @@ window.onload = function () {
   if (pets_data) {
     initializeCarousel();
   }
+  addPetsClickHandler();
 }
 
 function initializeCarousel() {
@@ -254,48 +255,12 @@ function moveCarousel(direction) {
   }, 500);
 }
 
-function renderCards_orig() {
-  const carousel = document.getElementById("carousel");
-  carousel.innerHTML = '';
-  currentCards.forEach(animal => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `<img src="${animal.image}" alt="${animal.name}"><h3>${animal.name}</h3>`;
-      carousel.appendChild(card);
-  });
-}
-
 function renderCards() {
   let petsWrapper = getPetsWrapper();
   
   generatePets(currentCards).forEach(pet => {
     petsWrapper.append(pet.generatePetCard())
   })
-
-  addPetsClickHandler();
-}
-
-function slide_old(direction) {
-  const carousel = document.getElementById("carousel");
-  const remainingAnimals = pets_data.filter(animal => !currentCards.includes(animal));
-  const shuffledAnimals = remainingAnimals.sort(() => 0.5 - Math.random());
-  
-  previousCards = currentCards.slice();
-
-  if (direction === "right") {
-      currentCards = shuffledAnimals.slice(0, cardsToShow);
-      carousel.style.transform = 'translateX(-100%)';
-  } else if (direction === "left") {
-      currentCards = shuffledAnimals.slice(0, cardsToShow);
-      carousel.style.transform = 'translateX(100%)';
-  }
-  
-  setTimeout(() => {
-      renderCards();
-      carousel.style.transition = 'none';
-      carousel.style.transform = 'translateX(0)';
-      setTimeout(() => carousel.style.transition = 'transform 0.5s ease', 0);
-  }, 500);
 }
 
 function slide(direction) {
@@ -346,7 +311,8 @@ function slide(direction) {
       newCarousel.style.width = '100%'
       
       currentCards = newCards;
-  }, 520); // время дольше анимации, чтобы избежать сбоев
+      addPetsClickHandler();
+  }, 520); 
 }
 
 const renderPetsToDom = () => {
@@ -387,19 +353,6 @@ const generatePets = (data) => {
     pets.push(new PetCard(pet))
   });
   return pets;
-}
-
-function generateRandomCards_old(pets, numCards, lastSlide = []) {
-  // Перемешиваем массив питомцев
-  const shuffledPets = shuffleArray([...pets]);
-
-  // Фильтруем карточки, которые уже есть в предыдущем слайде
-  const filteredPets = shuffledPets.filter(pet => !lastSlide.includes(pet.id));
-
-  // Выбираем первые 'numCards' элементов после фильтрации
-  const selectedCards = filteredPets.slice(0, numCards);
-
-  return selectedCards;
 }
 
 function createSlide(petsData, currentSlide, numCards = 3) {
