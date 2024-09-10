@@ -45,7 +45,7 @@ $mobile-small-width: 320px;
 .pet-modal__content {
   display: flex;
   max-width: 900px;
-
+  gap: 20px;
 
   @include media-tablet() {
     max-width: 630px;
