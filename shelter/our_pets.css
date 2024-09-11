@@ -700,7 +700,7 @@ html {
   right: 0;
 }
 
-.menu-active ul {
+.menu-active a {
   color: #FAFAFA;
   font-family: Arial;
   font-size: 32px;
