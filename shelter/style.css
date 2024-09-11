@@ -955,6 +955,16 @@ html {
   right: 0;
 }
 
+.menu-active ul {
+  color: #FAFAFA;
+  /* paragraph-mobile-menu */
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 51.2px */
+}
+
 .overlay-active {
   display: block;
   opacity: 1;
