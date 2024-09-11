@@ -955,6 +955,15 @@ html {
   right: 0;
 }
 
+.menu-active ul {
+  color: #FAFAFA;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+
 .overlay-active {
   display: block;
   opacity: 1;

@@ -834,12 +834,17 @@ html {
 
   .navbar ul {
     display: none;
-}
+  }
 }
 
 @keyframes move-right {
-  from {left: -640px;}
-  to {left: -1280px;}
+  from {
+    left: -640px;
+  }
+
+  to {
+    left: -1280px;
+  }
 }
 
 .transition-right {
@@ -848,8 +853,13 @@ html {
 }
 
 @keyframes move-left {
-  from {left: -640px;}
-  to {left: 0px;}
+  from {
+    left: -640px;
+  }
+
+  to {
+    left: 0px;
+  }
 }
 
 .transition-left {
@@ -906,6 +916,15 @@ html {
 
 .menu-active {
   right: 0;
+}
+
+.menu-active ul {
+  color: #FAFAFA;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
 }
 
 .overlay-active {
