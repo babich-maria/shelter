@@ -177,6 +177,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+let totalPages = 0;
+let currentPage = 1;
+const petsPerPage = 8; // Количество питомцев на одной странице для ширины экрана >= 1280px
+let shuffledPetsData = [];
+
+function calculateTotalPages() {
+  const width = window.innerWidth;
+  if (width >= 1280) {
+    totalPages = 6;
+  } else if (width >= 768) {
+    totalPages = 8;
+  } else {
+    totalPages = 16;
+  }
+}
+
 window.onload = function () {
   if (pets_data) {
     initializeCarousel();
@@ -199,12 +215,19 @@ function calculateCardsToShow() {
 window.addEventListener('resize', handleResize);
 
 let currentCards = [];
-let previousCards = [];
 let cardsToShow = calculateCardsToShow();
 
 function generateRandomCards() {
   const shuffledAnimals = shuffleArray([...pets_data]);
   currentCards = shuffledAnimals.slice(0, cardsToShow);
+}
+
+function initializePetsData() {
+  shuffledPetsData = [];
+  for (let i = 0; i < 6; i++) {
+    shuffledPetsData = shuffledPetsData.concat(shuffleArray([...pets_data]));
+  }
+  shuffledPetsData = shuffleArray(shuffledPetsData); // Перемешиваем массив
 }
 
 function renderCards() {

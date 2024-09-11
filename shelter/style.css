@@ -182,6 +182,11 @@ html {
     align-self: center;
   }
 }
+@media only screen and (max-width: 768px) {
+  .section-main {
+    padding: 0 10px 0 10px;
+  }
+}
 .section-about,
 .section-help, .section-main__content {
   justify-content: center;
@@ -262,6 +267,11 @@ html {
 @media only screen and (max-width: 1060px) {
   .header-wrapper {
     padding: 30px 30px 0px 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header-wrapper {
+    padding: 30px 20px 0px 20px;
   }
 }
 .nav-list {
