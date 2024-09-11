@@ -603,7 +603,7 @@ html {
 }
 
 .adaptive-menu li {
-  margin: 20px 0;
+  margin: 0;
 }
 
 .adaptive-menu a {
@@ -640,6 +640,14 @@ html {
   font-style: normal;
   font-weight: 400;
   line-height: 160%;
+}
+
+.adaptive-menu ul li {
+  margin-bottom: 40px; /* Устанавливает расстояние в 40 пикселей между элементами */
+}
+
+.adaptive-menu ul li:last-child {
+  margin-bottom: 0; /* Убирает нижний отступ у последнего элемента */
 }
 
 .overlay-active {
