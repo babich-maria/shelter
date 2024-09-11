@@ -98,6 +98,18 @@ html {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .section-main {
+    padding: 0 10px 0 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section-main {
+    padding: 0 10px 0 10px;
+  }
+}
+
 .header-wrapper {
   display: flex;
   justify-content: space-between;
