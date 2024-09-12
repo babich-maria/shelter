@@ -195,7 +195,9 @@ function calculateTotalPages() {
 
 window.onload = function () {
   if (pets_data) {
-    initializeCarousel();
+    initializePetsData();
+    calculateTotalPages();
+    renderCurrentPage();
   }
   addPetsClickHandler2();
 }
@@ -207,12 +209,16 @@ function initializeCarousel() {
 
 function calculateCardsToShow() {
   const width = window.innerWidth;
-  if (width >= 800) return 8;
-  if (width >= 650) return 6;
+  if (width >= 1280) return 8;
+  if (width >= 768) return 6;
   return 3;
 }
 
-window.addEventListener('resize', handleResize);
+window.addEventListener('resize', () => {
+  handleResize();
+  calculateTotalPages();
+  renderCurrentPage();
+});
 
 let currentCards = [];
 let cardsToShow = calculateCardsToShow();
@@ -227,7 +233,7 @@ function initializePetsData() {
   for (let i = 0; i < 6; i++) {
     shuffledPetsData = shuffledPetsData.concat(shuffleArray([...pets_data]));
   }
-  shuffledPetsData = shuffleArray(shuffledPetsData); // Перемешиваем массив
+  shuffledPetsData = shuffleArray(shuffledPetsData);
 }
 
 function renderCards() {
@@ -237,6 +243,57 @@ function renderCards() {
     petsWrapper.append(pet.generatePetCard())
   })
 }
+
+function renderCurrentPage() {
+  let petsWrapper = getPetsWrapper();
+  const startIndex = (currentPage - 1) * petsPerPage;
+  const endIndex = startIndex + petsPerPage;
+  const pagePets = shuffledPetsData.slice(startIndex, endIndex);
+
+  generatePets(pagePets).forEach(pet => {
+    petsWrapper.append(pet.generatePetCard())
+  })
+
+  updatePaginationControls();
+}
+
+function updatePaginationControls() {
+  document.querySelector('.circle-active').innerText = currentPage;
+
+  document.querySelector('.circle:first-child').classList.toggle('circle-disabled', currentPage === 1);
+  document.querySelector('.circle:nth-child(2)').classList.toggle('circle-disabled', currentPage === 1);
+
+  document.querySelector('.circle:nth-last-child(2)').classList.toggle('circle-disabled', currentPage === totalPages);
+  document.querySelector('.circle:last-child').classList.toggle('circle-disabled', currentPage === totalPages);
+}
+
+document.querySelector('.circle:first-child').addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage = 1;
+    renderCurrentPage();
+  }
+});
+
+document.querySelector('.circle:nth-child(2)').addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    renderCurrentPage();
+  }
+});
+
+document.querySelector('.circle:nth-last-child(2)').addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderCurrentPage();
+  }
+});
+
+document.querySelector('.circle:last-child').addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage = totalPages;
+    renderCurrentPage();
+  }
+});
 
 const getPetsWrapper = () => {
   const petsConstainer = document.querySelector('.section-pets__carusel-cards');
@@ -280,8 +337,8 @@ const renderPetModalWindow = (content) => {
 function handleResize() {
   const newCardsToShow = calculateCardsToShow();
   if (newCardsToShow !== cardsToShow) {
-      cardsToShow = newCardsToShow;
-      generateRandomCards();
-      renderCards();
+    cardsToShow = newCardsToShow;
+    calculateTotalPages();
+    renderCurrentPage();
   }
 }
