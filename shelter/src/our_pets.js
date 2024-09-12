@@ -157,12 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Функция для открытия/закрытия меню
   function toggleMenu() {
-      adaptiveMenu.classList.toggle('menu-active');
-      menuOverlay.classList.toggle('overlay-active');
-      burgerMenu.classList.toggle('burger-active');
+    adaptiveMenu.classList.toggle('menu-active');
+    menuOverlay.classList.toggle('overlay-active');
+    burgerMenu.classList.toggle('burger-active');
 
-      // Блокировка скролла страницы
-      document.body.style.overflow = adaptiveMenu.classList.contains('menu-active') ? 'hidden' : 'auto';
+    // Блокировка скролла страницы
+    document.body.style.overflow = adaptiveMenu.classList.contains('menu-active') ? 'hidden' : 'auto';
   }
 
   // Обработчик клика по бургер-иконке
@@ -173,13 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Обработчик кликов по ссылкам в меню
   document.querySelectorAll('.adaptive-menu a').forEach(link => {
-      link.addEventListener('click', toggleMenu);
+    link.addEventListener('click', toggleMenu);
   });
 });
 
 let totalPages = 0;
 let currentPage = 1;
-const petsPerPage = 8; // Количество питомцев на одной странице для ширины экрана >= 1280px
+let petsPerPage = 8; // Количество питомцев на одной странице для ширины экрана >= 1280px
 let shuffledPetsData = [];
 
 function calculateTotalPages() {
@@ -209,9 +209,16 @@ function initializeCarousel() {
 
 function calculateCardsToShow() {
   const width = window.innerWidth;
-  if (width >= 1280) return 8;
-  if (width >= 768) return 6;
-  return 3;
+  if (width >= 1280) {
+    petsPerPage = 8;
+    
+  } else if (width >= 768) {
+    petsPerPage = 6;
+  } else {
+    petsPerPage = 3;
+  }
+
+  return petsPerPage;
 }
 
 window.addEventListener('resize', () => {
@@ -238,7 +245,7 @@ function initializePetsData() {
 
 function renderCards() {
   let petsWrapper = getPetsWrapper();
-  
+
   generatePets(currentCards).forEach(pet => {
     petsWrapper.append(pet.generatePetCard())
   })
