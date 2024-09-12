@@ -74,4 +74,9 @@ $mobile-small-width: 320px;
   svg {
     pointer-events: none;
   }
+
+  &:hover rect {
+    fill: #f1cdb3; 
+    transition: 0.3s;
+  }
 }

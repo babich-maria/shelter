@@ -37,4 +37,8 @@
 }
 .modal__close-icon svg {
   pointer-events: none;
+}
+.modal__close-icon:hover rect {
+  fill: #f1cdb3;
+  transition: 0.3s;
 }/*# sourceMappingURL=modal.css.map */
